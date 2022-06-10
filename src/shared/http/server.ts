@@ -8,6 +8,7 @@ import express, {
 import cors from 'cors';
 import AppError from '@shared/errors/AppError';
 import routes from './routes';
+import '@shared/typeorm';
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(routes);
 app.use(
   (
     err: ErrorRequestHandler,
-    req: Request,
+    _req: Request,
     res: Response,
     _next: NextFunction,
   ) => {
