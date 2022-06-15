@@ -6,7 +6,7 @@ const productsRouter = Router();
 const productsController = new ProductsController();
 
 productsRouter.route('/')
-  .get(productsController.index)
+  .get(productsController.list)
   .post(
     celebrate({
       [Segments.BODY]: {
