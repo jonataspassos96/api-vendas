@@ -8,6 +8,7 @@ import 'express-async-errors';
 import cors from 'cors';
 import { errors } from 'celebrate';
 import AppError from '@shared/errors/AppError';
+import uploadConfig from '@config/upload';
 import routes from './routes';
 import '@shared/typeorm';
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use(routes);
 
+app.use('/files', express.static(uploadConfig.directory));
 app.use(errors());
 
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
