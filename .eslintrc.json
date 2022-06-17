@@ -21,6 +21,7 @@
   "rules": {
     "no-console": "off",
     "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
     "camelcase": "warn",
     "arrow-parens": [
       2,
@@ -32,6 +33,7 @@
     ],
     "implicit-arrow-linebreak": "off",
     "consistent-return": "off",
+    "@typescript-eslint/no-throw-literal": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -78,7 +80,7 @@
     "max-lines-per-function": [
       "error",
       {
-        "max": 20,
+        "max": 50,
         "skipBlankLines": true,
         "skipComments": true
       }
