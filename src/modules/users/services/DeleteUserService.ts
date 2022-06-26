@@ -8,15 +8,15 @@ interface IRequest {
 
 class DeleteUserService {
   public async execute({ id }: IRequest): Promise<void> {
-    const userRepository = getCustomRepository(UserRepository);
+    const usersRepository = getCustomRepository(UserRepository);
 
-    const user = await userRepository.findById(id);
+    const user = await usersRepository.findById(id);
 
     if (!user) {
-      throw new AppError('User not found.');
+      throw new AppError('User not found');
     }
 
-    await userRepository.remove(user);
+    await usersRepository.remove(user);
   }
 }
 
