@@ -23,7 +23,7 @@
     "no-underscore-dangle": "off",
     "import/no-named-default": "off",
     "class-methods-use-this": "off",
-    "camelcase": "warn",
+    "camelcase": "off",
     "arrow-parens": [
       2,
       "always"
@@ -39,9 +39,7 @@
       "error",
       {
         "selector": "property",
-        "format": [
-          "strictCamelCase"
-        ],
+        "format": null,
         "filter": {
           "regex": "^_",
           "match": false
