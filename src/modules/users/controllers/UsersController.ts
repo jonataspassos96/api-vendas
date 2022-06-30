@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { instanceToInstance } from 'class-transformer';
 import CreateUserService from '../services/CreateUserService';
 import DeleteUserService from '../services/DeleteUserService';
 import ListUserService from '../services/ListUserService';
@@ -9,7 +10,7 @@ class UsersController {
 
     const users = await listUsers.execute();
 
-    return res.json(users);
+    return res.json(instanceToInstance(users));
   }
 
   public async create(req: Request, res: Response): Promise<Response> {
@@ -19,7 +20,7 @@ class UsersController {
 
     const user = await createUser.execute({ name, email, password });
 
-    return res.json(user);
+    return res.json(instanceToInstance(user));
   }
 
   public async delete(req: Request, res: Response): Promise<Response> {
