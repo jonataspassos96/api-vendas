@@ -16,7 +16,7 @@ class CreateProductService {
     const productExists = await productRepository.findByName(name);
 
     if (productExists) {
-      throw new AppError('There is already one product witth this name');
+      throw new AppError('There is already one product with this name');
     }
 
     const redisCache = new RedisCache();
